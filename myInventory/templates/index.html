@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="button-group">
+
+    <a href="{% url 'display_alimentos' %}" class="btn btn-primary btn-md" role="button">Alimentos</a>
+    <a href="#" class="btn btn-warning btn-sm" role="button">+</a>
+
+    <a href="#" class="btn btn-primary btn-md" role="button">Suplementos</a>
+    <a href="#" class="btn btn-warning btn-sm" role="button">+</a>
+
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Disponibles</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in items %}
+
+        <tr>
+            <th>{{ item.pk }}  </th>
+            <th>{{ item.theType }}  </th>
+            <th>{{ item.price }}  </th>
+            <th>{{ item.status }}  </th>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
